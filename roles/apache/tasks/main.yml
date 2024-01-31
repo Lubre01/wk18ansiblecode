@@ -1,0 +1,17 @@
+---
+# tasks file for apache
+    - name: latest Apache version installed
+      yum:
+        name: "{{yum_name}}"
+        state: latest
+
+    - name: Start the httpd Daemon
+      service:
+        name: "{{yum_name}}"
+        enabled: true
+
+    - name: Copy index file to target
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html
+      notify: Restart Apache

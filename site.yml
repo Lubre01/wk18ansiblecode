@@ -1,0 +1,12 @@
+---
+- hosts: db
+  become: yes
+  gather_facts: true
+  tasks:
+
+  roles:
+   - apache
+   - system
+   - java
+
+   

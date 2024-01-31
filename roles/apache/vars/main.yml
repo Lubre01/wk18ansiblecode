@@ -1,0 +1,3 @@
+---
+# vars file for apache
+yum_name: httpd
